@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-# sample usage: checksites.py eriwen.com nixtutor.com yoursite.org
-
 import pickle
 import os
 import logging
@@ -26,10 +24,10 @@ def generate_email_alerter(to_addrs, from_addr=None, use_gmail=False,
 
     if use_gmail:
         if username and password:
-            server = SMTP('smtp.gmail.com', 587)
+            server = SMTP('postman.realimage.co.in', 25)
             server.starttls()
         else:
-            raise OptionValueError('You must provide a username and password to use GMail')
+            raise OptionValueError('You must provide a username and password to use')
     else:
         if hostname:
             server = SMTP(hostname, port)
